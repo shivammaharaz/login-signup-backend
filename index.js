@@ -31,9 +31,8 @@ const user = model("USER", userSchema);
 //db connection ends *******************************************//
 
 // home page ***************************************************//
-app.get("/", async (req, resp) => {
-   const data= await user.find({})
-   resp.send(JSON.stringify(data))
+app.get("/",(req, resp) => {
+resp.sendFile(__dirname+"/public/index.html")
 });
 //  home page code ends here ***********************************//
 
