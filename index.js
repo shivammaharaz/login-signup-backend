@@ -7,7 +7,7 @@ const { Schema, model } = require("mongoose");
 const port = process.env.PORT || 5000;
 
 app.use(express.json());
-app.use(express.static(__dirname))
+app.use(express.static('public'))
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
