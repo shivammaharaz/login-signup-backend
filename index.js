@@ -7,6 +7,7 @@ const { Schema, model } = require("mongoose");
 const port = process.env.PORT || 5000;
 
 app.use(express.json());
+app.use(express.static(__dirname))
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
@@ -30,8 +31,9 @@ const user = model("USER", userSchema);
 //db connection ends *******************************************//
 
 // home page ***************************************************//
-app.get("/", (req, resp) => {
-  resp.send("hello from server");
+app.get("/", async (req, resp) => {
+   const data= await user.find({})
+   resp.send(JSON.stringify(data))
 });
 //  home page code ends here ***********************************//
 
