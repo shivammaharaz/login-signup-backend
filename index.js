@@ -23,6 +23,7 @@ mongoose.connect(
 
 const userSchema = new Schema({
   name: String,
+  url:String,
   email: String,
   password: String,
 });
@@ -65,6 +66,7 @@ app.post("/login", (req, resp) => {
 app.post("/register", (req, resp) => {
   const data = {
     name: req.body.name,
+    url: req.body.url,
     email: req.body.email,
     password: req.body.password,
   };
