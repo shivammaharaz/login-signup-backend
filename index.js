@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const { Schema, model } = require("mongoose");
 
 const port = process.env.PORT || 5000;
+// added comment
 
 app.use(express.json());
 app.use(express.static('public'))
