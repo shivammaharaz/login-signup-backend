@@ -12,7 +12,7 @@ app.use(express.static('public'))
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
-// db connection starts ****************************************//
+// db connection starts **************************************//
 
 mongoose.connect(
   "mongodb+srv://Shivam:2001@cluster0.bxo7vjp.mongodb.net/DemoData",
